@@ -106,6 +106,12 @@ double BME280::readHumidity(void) {
     return (unsigned long int)(v_x1 >> 12) / 1024.0;   
 }
 
+void BME280::readID(){
+  uint8_t data[8];
+    readReg(0xD0, 1, data);
+
+    Serial.println(data[0], HEX);
+}
 void BME280::writeReg(uint8_t reg_address, uint8_t data) {
     digitalWrite(bme280_cs, LOW);
     SPI.transfer(reg_address & B01111111);

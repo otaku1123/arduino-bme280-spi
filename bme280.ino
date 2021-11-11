@@ -30,6 +30,8 @@ void setup()
     DBG("\r\nStart\r\n");
 
     bme280.begin(BME_CS);
+
+    bme280.readID();
 }
 
 

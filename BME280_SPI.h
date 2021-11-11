@@ -20,6 +20,8 @@ public:
 
     double readPressure(void);
 
+    void readID();
+
 private:
     signed long int t_fine;
 
